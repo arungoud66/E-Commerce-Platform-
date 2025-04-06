@@ -2,6 +2,11 @@ import { useEffect, useState } from 'react';
 import { toast } from 'sonner';
 import tulliusJacket from '../../assets/tulliusJacket.avif'
 import SparkovJacket from '../../assets/SparkovJacket.avif'
+import Hoodie from '../../assets/Hoodie.avif'
+import officeT from '../../assets/officeT.avif'
+import PlaneT from '../../assets/PlaneT.avif'
+import TShirt from '../../assets/TShirt.avif'
+import ProductGrid from './ProductGrid';
 
 const selectedProduct = {
 	name: 'Stylish Jacket',
@@ -23,6 +28,33 @@ const selectedProduct = {
 		},
 	],
 };
+
+const similarProducts = [
+	{
+		_id: 1,
+		name: 'Hoodie',
+		price: 120,
+		images: [{ url: Hoodie }],
+	},
+	{
+		_id: 2,
+		name: 'Office Wear',
+		price: 40,
+		images: [{ url: officeT }],
+	},
+	{
+		_id: 3,
+		name: 'Plane T',
+		price: 45,
+		images: [{ url: PlaneT }],
+	},
+	{
+		_id: 4,
+		name: 'Kiwi T',
+		price: 66,
+		images: [{ url: TShirt }],
+	},
+];
 
 
 const ProductDetails = () => {
@@ -171,9 +203,13 @@ const ProductDetails = () => {
 						</div>
 					</div>
 				</div>
+				{/* Similar Products */}
+				<div className='mt-20'>
+					<h2 className='text-2xl text-center font-medium mb-4'>You May Also Like</h2>
+					<ProductGrid products={similarProducts} />
+				</div>
 			</div>
 		</div>
 	);
 };
 export default ProductDetails;
-
