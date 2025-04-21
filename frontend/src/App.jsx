@@ -12,6 +12,9 @@ import Checkout from './components/Cart/CheckOut'
 import OrderConfirmationPage from './views/OrderConfirmationPage'
 import OrderDetailsPage from './views/OrderDetailsPage'
 import MyOrdersPage from './views/MyOrdersPage'
+import AdminLayout from './components/Admin/AdminLayout'
+import AdminHome from './views/AdminHome'
+import UserManagement from './components/Admin/UserManagement'
 
 function App() {
 
@@ -32,7 +35,10 @@ function App() {
               <Route path='/order/:id' element={<OrderDetailsPage />} />
               <Route path='/my-orders' element={<MyOrdersPage />} />
             </Route>
-
+            <Route path='/admin' element={<AdminLayout />}>
+              <Route index element={<AdminHome />} />
+              <Route path='users' element={<UserManagement />} />
+            </Route>
           </Routes>
         </BrowserRouter>
     </div>
