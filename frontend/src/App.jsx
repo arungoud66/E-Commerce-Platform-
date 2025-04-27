@@ -15,6 +15,9 @@ import MyOrdersPage from './views/MyOrdersPage'
 import AdminLayout from './components/Admin/AdminLayout'
 import AdminHome from './views/AdminHome'
 import UserManagement from './components/Admin/UserManagement'
+import ProductManagement from './components/Admin/ProductManagement'
+import EditProduct from './components/Admin/EditProduct'
+import OrderManagement from './components/Admin/OrderManagement'
 
 function App() {
 
@@ -38,6 +41,9 @@ function App() {
             <Route path='/admin' element={<AdminLayout />}>
               <Route index element={<AdminHome />} />
               <Route path='users' element={<UserManagement />} />
+              <Route path='products' element={<ProductManagement />} />
+              <Route path='products/:id/edit' element={<EditProduct />} />
+              <Route path='orders' element={<OrderManagement />} />
             </Route>
           </Routes>
         </BrowserRouter>
